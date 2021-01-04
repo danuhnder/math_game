@@ -7,36 +7,32 @@ class Game
     @players = []
     @players[0] = Player.new('Player 1')
     @players[1] = Player.new('Player 2')
-    @current_player = 0
+    @turn = 0
   end 
 
   def start
     while !@game_over do
-      player = @players[@current_player]
-      other_player = @players[(@current_player + 1) % 2]
+      player = @players[@turn %2]
+      other_player = @players[(@turn + 1) % 2]
       new_question = Question.new(player.name)
       new_question.ask
       answer = gets.chomp.to_i
-      if answer == new_question.answer
+      if new_question.validate(answer)
         puts "You got it right!"
-        puts "Your score is #{player.score}/3"
       else
-        player.score -= 1
+        player.lose_life
         puts "You got it wrong!"
-        puts "Your score is #{player.score}/3"
         if player.score == 0
           puts "#{other_player.name} wins with a score of #{other_player.score}/3"
           @game_over = true
-        end
+          break
+        end        
       end
-      @current_player = (@current_player + 1) % 2
+      puts "Your score is #{player.score}/3"
+      @turn = @turn + 1
     end
 
   end
-
-
-  
-  
 
 end
 

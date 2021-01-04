@@ -1,6 +1,6 @@
 class Question
 
-  attr_accessor :answer
+  attr_reader :answer
 
   def initialize (player)
     @player = player
@@ -12,6 +12,11 @@ class Question
   def ask
     puts "#{@player}: What does #{@val1} plus #{@val2} equal?"
   end
+
+  def validate(answer)
+    answer == @answer
+  end
+      
 
 end
 
