@@ -4,4 +4,4 @@ require './question.rb'
 
 current_game = Game.new
 
-current_game.start
+puts current_game
