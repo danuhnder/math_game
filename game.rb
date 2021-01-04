@@ -10,14 +10,7 @@ class Game
     @current_player = 0
   end 
 
-  def to_s
-    "The current game is between #{@players[0].name} and #{@players[1].name}. Is the game over? #{@game_over} Who is the current player? #{@current_player}"
-  end
-
-
-
   def start
-    
     while !@game_over do
       player = @players[@current_player]
       other_player = @players[(@current_player + 1) % 2]
@@ -36,9 +29,7 @@ class Game
           @game_over = true
         end
       end
-
       @current_player = (@current_player + 1) % 2
-
     end
 
   end

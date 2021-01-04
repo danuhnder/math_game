@@ -15,6 +15,3 @@ class Question
 
 end
 
-# question1 = Question.new(1, 3, 7)
-
-# question1.ask
