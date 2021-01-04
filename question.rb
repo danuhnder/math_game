@@ -1,13 +1,14 @@
 class Question
 
-  def initialize (player, val1, val2)
-    @player = player
-    @val1 = val1
-    @val2 = val2
+  def initialize (player)
+    player = player
+    val1 = rand(1...20)
+    val2 = rand(1...20)
+    answer = val1 + val2
   end
 
   def ask
-    puts "Player #{@player}: What does #{@val1} plus #{@val2} equal?"
+    puts "#{player}: What does #{val1} plus #{val2} equal?"
   end
 
 end

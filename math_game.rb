@@ -2,13 +2,12 @@
 
 #Game class - stores information about scores and who's turn it is. Has methods to
   # track which players turn it is
-  #generate questions
+  # generate questions
   # alter score
 
   
 #Question class - initialised with two values and a player number
   # outputs to stdout
-
 
 #Player class 
   # holds while other players turn is happening 
